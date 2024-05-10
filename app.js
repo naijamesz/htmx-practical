@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
           <!-- hx-target is a specifies the target element for the response content หรือ target element ที่จะถูกเปลี่ยนแปลง(swap) --->
           <button
             hx-get="/info"
+            hx-trigger="mouseenter[ctrlKey], "
             hx-target="main"
             hx-swap="beforeend"
             >Learn More</button>
