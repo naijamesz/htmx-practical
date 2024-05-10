@@ -4,7 +4,7 @@ import { HTMX_KNOWLEDGE } from './data/htmx-info.js';
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('public')); // this line is a configuration to serve static files from the public directory
 
 app.get('/', (req, res) => {
   res.send(`
@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
 
         <main>
           <p>HTMX is a JavaScript library that you use without writing JavaScript code.</p>
+          <!-- when trigger hx-get request --->
           <button hx-get="/info" hx-swap="outerHTML">Learn More</button>
         </main>
       </body>
@@ -39,6 +40,8 @@ app.get('/', (req, res) => {
 app.get('/info', (req, res) => {
   res.send(`
     <ul>
+      <!--- map each item in the array to a list item like react.js and HTMX_KNOWLEDGE is export by file htmx-info.js --->
+      <!--- .join('') the array to a string --->
       ${HTMX_KNOWLEDGE.map(info => `<li>${info}</li>`).join('')}
     </ul>
   `);
