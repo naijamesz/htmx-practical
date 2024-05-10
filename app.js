@@ -29,8 +29,14 @@ app.get('/', (req, res) => {
 
         <main>
           <p>HTMX is a JavaScript library that you use without writing JavaScript code.</p>
-          <!-- when trigger hx-get request --->
-          <button hx-get="/info" hx-swap="outerHTML">Learn More</button>
+          <!-- hx-getwhen trigger hx-get (issue a GET to the specified URL) request --->
+          <!-- hx-swap control how content will be swap or replace in the DOM (outerHTML, innerHTML, afterbegin, beforeend, afterend, beforebegin) --->
+          <!-- hx-target is a specifies the target element for the response content หรือ target element ที่จะถูกเปลี่ยนแปลง(swap) --->
+          <button
+            hx-get="/info"
+            hx-target="main"
+            hx-swap="beforeend"
+            >Learn More</button>
         </main>
       </body>
     </html>
