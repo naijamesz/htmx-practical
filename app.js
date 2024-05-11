@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
         </header>
 
         <main>
-        <h1>Manage your course goals</h1>
+          <h3>HTMX is a JavaScript library that you use without writing JavaScript code.</h3>
         <section>
           <form
           hx-post="/note"
